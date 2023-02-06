@@ -1,54 +1,85 @@
 package org.example;
 import java.util.Scanner;
 import java.util.logging.*;
-public class Student {
+import java.util.*;
+class Student {
     private static final Logger LOGGER = Logger.getLogger("InfoLogging");
     private String name;
     private int age;
     private float gpa;
     static String s;
 
-    Student(String name, int age) {
+    Student(String name, int age, float gpa) {
         this.name = name;
         this.age = age;
+        this.gpa = gpa;
+    }
+    public void setName(String name){
+        this.name = name;
     }
 
-    public String getDetails() {
-        s = "Below are the Student details:-" + "\n" + "Name:- " + name + "\n" + "Age:- " + age + "\n" + "GPA:- " + gpa;
-        return s;
+    public void setAge(int age){
+        this.age = age;
+    }
+    public void setGpa(float gpa){
+        this.gpa = gpa;
+    }
+    public String getName() {
+        return name;
     }
 
-    // Setter
-    public void setgpa(float c) {
-        this.gpa = c;
-        s = "The" + gpa + " GPA for the Student has been Registered";
-        LOGGER.info(s);
+    public int getAge() {
+        return age;
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        LOGGER.info( "Please Enter the Student Name");
-        String name = sc.next();
-        LOGGER.info( "Enter the Age");
-        int age = sc.nextInt();
-        Student Details = new Student(name, age);
-        boolean choose = true;
-        while (choose) {
-            LOGGER.info("Select the below Operations" + "\n" + "1.Set the Student GPA" + "\n" + "2.Get the Student Details" + "\n" + "3.Exit");
-            int ch = sc.nextInt();
-            if (ch == 1) {
-                LOGGER.info("Enter your GPA");
-                float gp = sc.nextFloat();
-                Details.setgpa(gp);
-            } else if (ch == 2) {
-                s = Details.getDetails();
-                LOGGER.info(s);
-                choose = false;
-            } else if (ch == 3) {
-                choose = false;
-            } else {
-                LOGGER.info( "Something Went Wrong");
-            }
+    public float getGpa() {
+        return gpa;
+    }
+
+    public static void printDetails(ArrayList<Student> al) {
+        Iterator itr = al.iterator();
+        while (itr.hasNext()) {
+            Student st = (Student) itr.next();
+            s = ("Name:- " + st.getName() + " Age:- " + st.getAge() + " GPA:- " + st.getGpa());
+            LOGGER.info(s);
         }
     }
-}
+    static class SortbyGpa implements Comparator<Student>
+    {
+        public int compare(Student a, Student b)
+        {
+            return (int) (b.gpa - a.gpa);
+        }
+    }
+            }
+    public class StudentTest {
+        public static void main(String[] args) {
+            String s;
+            final Logger LOGGER = Logger.getLogger("InfoLogging");
+            Scanner sc = new Scanner(System.in);
+            Student s3 = new Student("Zombi", 25, 8);
+            Student s4 = new Student("Nexa", 21, 7);
+            Student s5 = new Student("Rock", 25, 6);
+            Student s1 = new Student("ranjith", 23, 10);
+            Student s2 = new Student("Ravi", 21, 9);
+            ArrayList<Student> al = new ArrayList<Student>();
+            al.add(s3);
+            al.add(s4);
+            al.add(s5);
+            al.add(s1);
+            al.add(s2);
+            LOGGER.info("Select the below Operations" + "\n" + "1.PrintDetails of each Student" + "\n" + "2.Sort the list by highest to lowest with respect to GPA and Display" + "\n" + "3.Exit");
+            int op = sc.nextInt();
+                if (op == 1) {
+                    Student.printDetails(al);
+                } else if (op == 2) {
+                    Collections.sort(al, new Student.SortbyGpa());
+                    LOGGER.info("After Sorting");
+                    for (Student st : al) {
+                        LOGGER.info(st.getName() + ", " + st.getAge() + ", " + st.getGpa());
+                    }
+                } else {
+                    LOGGER.info("Something went Wrong");
+                }
+            }
+        }
