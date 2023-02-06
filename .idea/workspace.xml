@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35632cb7-062b-4a29-9d07-cac86471f020" name="Changes" comment="">
+    <list default="true" id="35632cb7-062b-4a29-9d07-cac86471f020" name="Changes" comment="seventh commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/StudentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/StudentTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +25,9 @@
         <option name="workspaceImportEnabled" value="true" />
       </MavenImportingSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2LLlnxLkrcoE2AQMxLmTuy18DTD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -49,6 +51,18 @@
       <option name="presentableId" value="Default" />
       <updated>1675658417388</updated>
     </task>
+    <task id="LOCAL-00001" summary="seventh commit">
+      <created>1675674400191</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675674400191</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="seventh commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="seventh commit" />
   </component>
 </project>
